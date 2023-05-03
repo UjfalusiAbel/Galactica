@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GeneratePlanet : MonoBehaviour
 {
     [Range(5,256)]
-    public int resolution = 10;
+    public int resolution = 128;
     public ShapeSettings shapeSettings;
     public ColorSettings colorSettings;
 
@@ -16,13 +17,11 @@ public class GeneratePlanet : MonoBehaviour
     private ShapeGenerator shapeGenerator;
     private ColorGenerator colorGenerator;
 
-    private void OnValidate()
+    public void Initialize(ColorSettings colorSettings, ShapeSettings shapeSettings)
     {
-       ConstructPlanet();
-    }
+        this.colorSettings = colorSettings;
+        this.shapeSettings = shapeSettings;
 
-    private void Initialize()
-    {
         shapeGenerator = new ShapeGenerator();
         colorGenerator = new ColorGenerator();
 
@@ -43,7 +42,7 @@ public class GeneratePlanet : MonoBehaviour
             {
                 GameObject meshObject = new GameObject("mesh");
                 meshObject.transform.parent = transform;
-
+                meshObject.transform.position = transform.position;
                 meshObject.AddComponent<MeshRenderer>();
                 meshFilters[i] = meshObject.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
@@ -56,28 +55,18 @@ public class GeneratePlanet : MonoBehaviour
 
     public void ConstructPlanet()
     {
-        Initialize();
         GenerateMesh();
-        GenerateColors();
-    }
-
-    public void OnShapeSettingsUpdate()
-    {
-        Initialize();
-        GenerateMesh();
-    }
-
-    public void OnColorSettingsUpdate()
-    {
-        Initialize();
         GenerateColors();
     }
 
     private void GenerateMesh()
     {
+        int i = 0;
         foreach(var terrainFace in terrainFaces)
         {
             terrainFace.ConstructMesh();
+            transform.GetChild(i).AddComponent<MeshCollider>().convex = true;
+            i++;
         }
 
         colorGenerator.UpdateElevation(shapeGenerator.elevationMinMax);

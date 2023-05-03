@@ -1,5 +1,6 @@
 #Binary
 obj/
+Builds/
 
 #Library
 Library/
