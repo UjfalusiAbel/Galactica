@@ -14,6 +14,8 @@ public class Slot : MonoBehaviour
     private string occupiedText;
     [SerializeField]
     private TMP_Text text;
+    [SerializeField]
+    private GameObject deleteButton;
     private bool occupied;
     public bool GetOccupied
     {
@@ -31,17 +33,27 @@ public class Slot : MonoBehaviour
         }
     }
 
+    public string SetText
+    {
+        set
+        {
+            text.text = value;
+        }
+    }
+
     void Start()
     {
         if(CheckSave())
         {
             text.text = occupiedText;
             occupied = true;
+            deleteButton.SetActive(true);
         }
         else
         {
             text.text = freeText;
             occupied = false;
+            deleteButton.SetActive(false);
         }
     }
 

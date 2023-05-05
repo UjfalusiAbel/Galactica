@@ -57,36 +57,46 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\SaveLoad\FileHandler.cs" />
-    <Compile Include="Assets\Scripts\SaveLoad\Models\PlanetData.cs" />
     <Compile Include="Assets\Scripts\Planets\TerrainFace.cs" />
-    <Compile Include="Assets\Scripts\Planets\Noise\RigidNoiseFilter.cs" />
-    <Compile Include="Assets\Scripts\Menu\Slot.cs" />
-    <Compile Include="Assets\Scripts\Utility\PlanetDataGenerator.cs" />
+    <Compile Include="Assets\Scripts\Terrain\MeshGenerator.cs" />
+    <Compile Include="Assets\Scripts\Menu\SpaceMenu.cs" />
     <Compile Include="Assets\Scripts\Planets\Noise\Noise.cs" />
     <Compile Include="Assets\Scripts\Planets\Noise\NoiseFilterFactory.cs" />
-    <Compile Include="Assets\Scripts\Planets\Noise\NoiseSettings.cs" />
-    <Compile Include="Assets\Scripts\Planets\Noise\NoiseLayer.cs" />
     <Compile Include="Assets\Scripts\Planets\Color\ColorGenerator.cs" />
     <Compile Include="Assets\Scripts\Planets\Noise\SimpleNoiseFilter.cs" />
+    <Compile Include="Assets\Scripts\Terrain\TerrainNoiseGenerator.cs" />
+    <Compile Include="Assets\Scripts\Player\Spaceship.cs" />
     <Compile Include="Assets\Scripts\Utility\GameManager.cs" />
     <Compile Include="Assets\Scripts\Planets\Settings\ColorSettings.cs" />
     <Compile Include="Assets\Scripts\Planets\GeneratePlanet.cs" />
+    <Compile Include="Assets\Scripts\Terrain\TextureGenerator.cs" />
     <Compile Include="Assets\Scripts\SaveLoad\Models\SaveData.cs" />
-    <Compile Include="Assets\Scripts\SaveLoad\Encryptor.cs" />
-    <Compile Include="Assets\Scripts\Planets\ShapeGenerator.cs" />
     <Compile Include="Assets\Scripts\Planets\Noise\NoiseFilterType.cs" />
     <Compile Include="Assets\Scripts\Planets\Noise\INoiseFilter.cs" />
-    <Compile Include="Assets\Scripts\SaveLoad\Models\PlayerData.cs" />
-    <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Planets\Settings\ShapeSettings.cs" />
     <Compile Include="Assets\Scripts\Planets\Color\MinMax.cs" />
-    <Compile Include="Assets\Scripts\Player\Spaceship.cs" />
+    <Compile Include="Assets\Scripts\SaveLoad\Models\PlanetData.cs" />
+    <Compile Include="Assets\Scripts\Player\DockToStation.cs" />
+    <Compile Include="Assets\Scripts\Planets\Noise\RigidNoiseFilter.cs" />
+    <Compile Include="Assets\Scripts\Terrain\MapGenerator.cs" />
+    <Compile Include="Assets\Scripts\Menu\Slot.cs" />
+    <Compile Include="Assets\Scripts\Utility\PlanetDataGenerator.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\Terrain\Models\TerrainType.cs" />
+    <Compile Include="Assets\Scripts\Planets\Noise\NoiseSettings.cs" />
+    <Compile Include="Assets\Scripts\Terrain\Models\MeshData.cs" />
+    <Compile Include="Assets\Scripts\Planets\Noise\NoiseLayer.cs" />
+    <Compile Include="Assets\Scripts\SaveLoad\Encryptor.cs" />
+    <Compile Include="Assets\Scripts\Planets\ShapeGenerator.cs" />
+    <Compile Include="Assets\Scripts\SaveLoad\Models\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Menu\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -832,6 +842,9 @@
     <Reference Include="Unity.Services.Core">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
@@ -840,6 +853,9 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -867,12 +883,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

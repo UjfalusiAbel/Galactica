@@ -12,25 +12,25 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject saves;
     [SerializeField]
-    private Slot[] slot;
+    private Slot[] slots;
+    [SerializeField]
+    private GameObject[] deleteConfirms;
+    [SerializeField]
+    private GameObject[] deleteButtons;
 
     public void EnterSlots()
     {
-        saves.SetActive(true);
         menuAnim.SetBool("_isSlot", true);
-        Invoke(nameof(TimedMainInactivate), 1f);
     }
 
     public void EnterMain()
     {
-        main.SetActive(true);
         menuAnim.SetBool("_isSlot", false);
-        Invoke(nameof(TimedSavesInactivate), 1f);
     }
 
     public void LoadSaveSlot(int num)
     {
-        if (slot[num].CheckSave())
+        if (slots[num].CheckSave())
         {
             FileHandler.Singleton.LoadSaveData(num);
         }
@@ -42,18 +42,30 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void LoadDeleteConfirm(int num)
+    {
+        slots[num].gameObject.SetActive(false);
+        deleteConfirms[num].SetActive(true);
+        deleteButtons[num].SetActive(false);
+    }
+
+    public void DeactivateDeleteConfirm(int num)
+    {
+        slots[num].gameObject.SetActive(true);
+        deleteConfirms[num].SetActive(false);
+        deleteButtons[num].SetActive(true);
+    }
+
+    public void DeleteSave(int num)
+    {
+        FileHandler.Singleton.DeleteData(num);
+        slots[num].gameObject.SetActive(true);
+        deleteConfirms[num].SetActive(false);
+        slots[num].SetText = "Szabad";
+    }
+
     public void ExitGame()
     {
         Application.Quit();
-    }
-
-    private void TimedMainInactivate()
-    {
-        main.SetActive(false);
-    }
-
-    private void TimedSavesInactivate()
-    {
-        saves.SetActive(false);
     }
 }

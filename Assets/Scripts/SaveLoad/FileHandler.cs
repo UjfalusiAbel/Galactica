@@ -100,6 +100,19 @@ public class FileHandler
         }
     }
 
+    public void DeleteData(int slotNumber)
+    {
+        string finalPath = Path.Combine(Application.persistentDataPath, slots[slotNumber], saveFileName);
+        try
+        {
+            File.Delete(finalPath);
+        }
+        catch(Exception ex)
+        {
+            throw ex;
+        }
+    }
+
     public void LoadSaveData(int slotNumber)
     {
         data = LoadFromJson<SaveData>(slotNumber);

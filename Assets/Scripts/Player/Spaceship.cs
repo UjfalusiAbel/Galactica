@@ -27,6 +27,30 @@ public class Spaceship : MonoBehaviour
     private float roll1D;
     private Vector2 pitchYaw;
 
+    private bool isInputEnabled = true;
+
+    private static Spaceship instance;
+    public static Spaceship Singleton
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    public bool SetInputIsEnabled
+    {
+        set
+        {
+            isInputEnabled = value;
+        }
+    }
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -34,7 +58,10 @@ public class Spaceship : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HandleMovement();
+        if(isInputEnabled)
+        {
+            HandleMovement();
+        }
     }
 
     private void HandleMovement()
