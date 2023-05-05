@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TextureGenerator 
 {
+    private TerrainType[] terrainTypes;
+
     private static TextureGenerator instance;
     public static TextureGenerator Singleton
     {
@@ -14,6 +16,18 @@ public class TextureGenerator
                 instance = new TextureGenerator();
             }
             return instance;
+        }
+    }
+
+    public TerrainType[] TerrainTypes
+    {
+        get
+        {
+            return terrainTypes;
+        }
+        set
+        {
+            terrainTypes = value;
         }
     }
 

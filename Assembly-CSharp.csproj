@@ -90,6 +90,8 @@
     <Compile Include="Assets\Scripts\Planets\ShapeGenerator.cs" />
     <Compile Include="Assets\Scripts\SaveLoad\Models\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Utility\DataStorage.cs" />
+    <Compile Include="Assets\Scripts\Menu\TerrainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

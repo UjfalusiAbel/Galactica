@@ -17,6 +17,14 @@ public class GeneratePlanet : MonoBehaviour
     private ShapeGenerator shapeGenerator;
     private ColorGenerator colorGenerator;
 
+    public Gradient GetGradient
+    {
+        get
+        {
+            return colorSettings.gradient;
+        }
+    }
+
     public void Initialize(ColorSettings colorSettings, ShapeSettings shapeSettings)
     {
         this.colorSettings = colorSettings;
@@ -66,6 +74,7 @@ public class GeneratePlanet : MonoBehaviour
         {
             terrainFace.ConstructMesh();
             transform.GetChild(i).AddComponent<MeshCollider>().convex = true;
+            transform.GetChild(i).tag = "Planet";
             i++;
         }
 

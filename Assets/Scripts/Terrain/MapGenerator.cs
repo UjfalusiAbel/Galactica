@@ -27,8 +27,9 @@ public class MapGenerator : MonoBehaviour
     [SerializeField]
     private MeshRenderer meshRenderer;
 
-    private void OnValidate()
+    private void Start()
     {
+        terrainTypes = TextureGenerator.Singleton.TerrainTypes;
         GenerateMap();
     }
     public void GenerateMap()

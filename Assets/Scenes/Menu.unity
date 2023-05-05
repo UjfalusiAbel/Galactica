@@ -1550,7 +1550,10 @@ MonoBehaviour:
   - {fileID: 1989270645}
   - {fileID: 476586400}
   - {fileID: 268357552}
-  deleteButtons: []
+  deleteButtons:
+  - {fileID: 1157515869}
+  - {fileID: 1094897973}
+  - {fileID: 886642650}
 --- !u!1 &507941681
 GameObject:
   m_ObjectHideFlags: 0
