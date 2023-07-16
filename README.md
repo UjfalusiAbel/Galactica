@@ -28,5 +28,8 @@ Installation
     Contribution is not possible at the moment.
 
   License
+
+    Project is proprietary and licensed and proprietary license. You shall not replicate, comercially use or distribute it. 
+    Please read license.txt for further explanation
   
     
