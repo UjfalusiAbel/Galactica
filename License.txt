@@ -1,0 +1,11 @@
+Galactica
+
+© 2023 Újfalusi Ábel
+
+Permission is hereby denied to any individual or entity to commercially use, distribute, or replicate the software, including any modified versions, in any form or by any means, electronic or mechanical, without the express written permission of the software owner.
+
+The software is provided "as is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the software owner be liable for any claim, damages, or other liability arising from the use or distribution of the software.
+
+This license shall be governed by and interpreted in accordance with the laws of Romania. Any legal action arising out of or in connection with the software or this license shall be exclusively brought in the courts of Romania.
+
+For inquiries regarding commercial use, distribution, or replication, please contact abelujfalusi4@gmail.com.
